@@ -5,6 +5,10 @@
         <title>Interests Project</title>
     </head>
     <body>
-        
+        <h1>Users and Interests</h1>
+        {% for user in users %}
+        <p>{{user.name}} {{user.interest}}
+        <a href="/interests/{{user.id}}">See Interests</a></p>
+        {% endfor%}
     </body>
 </html>
