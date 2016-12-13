@@ -3,14 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>Interests Project</title>
+        {% load staticfiles %} <!-- ALWAYS REMEMBER THIS LINE OF CODE -->
+        <link rel="stylesheet" href="{% static "interests/css/styles.css" %}">
+        <script src="https://use.typekit.net/iii7xtz.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
     <body>
         <div id="wrapper">
         <h1>Enter Name & Interest</h1>
         <form action="/process" method="post">
             {% csrf_token %}
-            Name:<input type="text" name="name"></br>
-            Interest:<input type="text" name="interest"></br>
+            <input type="text" name="name" placeholder="Name"></br>
+            <input type="text" name="interest" placeholder="Interest"></br>
             <input type="submit" value="Submit">
         </form>
         </div>
